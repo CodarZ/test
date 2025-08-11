@@ -1,0 +1,17 @@
+name: Release Please Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: python
+          token: ${{ secrets.REPO_TOKEN }}

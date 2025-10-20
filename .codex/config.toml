@@ -1,0 +1,35 @@
+[mcp_servers.context7]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+type = "stdio"
+
+[mcp_servers.exa]
+args = ["-y", "mcp-remote", "https://mcp.exa.ai/mcp"]
+command = "npx"
+type = "stdio"
+
+[mcp_servers.exa.env]
+# https://dashboard.exa.ai/api-keys
+EXA_API_KEY = "你的 key,替换下"
+
+[mcp_servers.sequential-thinking]
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+command = "npx"
+type = "stdio"
+
+[mcp_servers.serena]
+args = [
+    "--from",
+    "git+https://github.com/oraios/serena",
+    "serena",
+    "start-mcp-server",
+    "--context",
+    "codex",
+    "--enable-web-dashboard",
+    "False",
+]
+command = "uvx"
+type = "stdio"
+
+[mcp_servers.deepwiki]
+url = "https://mcp.deepwiki.com/mcp"
